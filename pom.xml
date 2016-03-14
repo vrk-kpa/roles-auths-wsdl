@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>fi.kapa.rova</groupId>
+    <groupId>fi.vm.kapa.rova</groupId>
     <artifactId>roles-auths-wsdl</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>roles-auths-wsdl</name>
@@ -30,7 +30,7 @@
                     </goals>
                     <configuration>
                         <packageName>fi.vm.kapa.xml.rova.api.delegate</packageName>
-                        <wsdlLocation>../../../../../../../wsdl/delegate.wsdl</wsdlLocation>
+                        <!--<wsdlLocation>../../../../../../../wsdl/delegate.wsdl</wsdlLocation>-->
                         <wsdlUrls>
                             <wsdlUrl>${basedir}/src/main/resources/wsdl/delegate.wsdl</wsdlUrl>
                         </wsdlUrls>
@@ -45,7 +45,7 @@
                     </goals>
                     <configuration>
                         <packageName>fi.vm.kapa.xml.rova.api.authorization</packageName>
-                        <wsdlLocation>../../../../../../../wsdl/authorization.wsdl</wsdlLocation>
+                        <!--<wsdlLocation>../../../../../../../wsdl/authorization.wsdl</wsdlLocation>-->
                         <wsdlUrls>
                             <wsdlUrl>${basedir}/src/main/resources/wsdl/authorization.wsdl</wsdlUrl>
                         </wsdlUrls>
@@ -60,7 +60,7 @@
                     </goals>
                     <configuration>
                         <packageName>fi.vm.kapa.xml.rova.api.orgroles</packageName>
-                        <wsdlLocation>../../../../../../../wsdl/orgroles.wsdl</wsdlLocation>
+                        <!--<wsdlLocation>../../../../../../../wsdl/orgroles.wsdl</wsdlLocation>-->
                         <wsdlUrls>
                             <wsdlUrl>${basedir}/src/main/resources/wsdl/orgroles.wsdl</wsdlUrl>
                         </wsdlUrls>
