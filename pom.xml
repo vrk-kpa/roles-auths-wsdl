@@ -20,7 +20,7 @@
         <plugin>
             <groupId>org.jvnet.jax-ws-commons</groupId>
             <artifactId>jaxws-maven-plugin</artifactId>
-            <version>2.1</version>
+            <version>2.3</version>
             <executions>
                 <execution>
                     <id>delegate</id>
@@ -30,11 +30,15 @@
                     </goals>
                     <configuration>
                         <packageName>fi.vm.kapa.xml.rova.api.delegate</packageName>
-                        <!--<wsdlLocation>../../../../../../../wsdl/delegate.wsdl</wsdlLocation>-->
+                        <wsdlLocation>/wsdl/delegate.wsdl</wsdlLocation>
                         <wsdlUrls>
                             <wsdlUrl>${basedir}/src/main/resources/wsdl/delegate.wsdl</wsdlUrl>
                         </wsdlUrls>
                         <verbose>true</verbose>
+                        <vmArgs>
+                            <vmArg>-Djavax.xml.accessExternalDTD=all</vmArg>
+                            <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                        </vmArgs>
                     </configuration>
                 </execution>
                 <execution>
@@ -45,11 +49,15 @@
                     </goals>
                     <configuration>
                         <packageName>fi.vm.kapa.xml.rova.api.authorization</packageName>
-                        <!--<wsdlLocation>../../../../../../../wsdl/authorization.wsdl</wsdlLocation>-->
+                        <wsdlLocation>/wsdl/authorization.wsdl</wsdlLocation>
                         <wsdlUrls>
                             <wsdlUrl>${basedir}/src/main/resources/wsdl/authorization.wsdl</wsdlUrl>
                         </wsdlUrls>
                         <verbose>true</verbose>
+                        <vmArgs>
+                            <vmArg>-Djavax.xml.accessExternalDTD=all</vmArg>
+                            <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                        </vmArgs>
                     </configuration>
                 </execution>
                 <execution>
@@ -60,11 +68,15 @@
                     </goals>
                     <configuration>
                         <packageName>fi.vm.kapa.xml.rova.api.orgroles</packageName>
-                        <!--<wsdlLocation>../../../../../../../wsdl/orgroles.wsdl</wsdlLocation>-->
+                        <wsdlLocation>/wsdl/orgroles.wsdl</wsdlLocation>
                         <wsdlUrls>
                             <wsdlUrl>${basedir}/src/main/resources/wsdl/orgroles.wsdl</wsdlUrl>
                         </wsdlUrls>
                         <verbose>true</verbose>
+                        <vmArgs>
+                            <vmArg>-Djavax.xml.accessExternalDTD=all</vmArg>
+                            <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                        </vmArgs>
                     </configuration>
                 </execution>
                 <execution>
@@ -75,11 +87,15 @@
                     </goals>
                     <configuration>
                         <packageName>fi.vm.kapa.xml.vare.api.mandate</packageName>
-                        <wsdlLocation>../../../../../../../wsdl/mandate.wsdl</wsdlLocation>
+                        <wsdlLocation>/wsdl/mandate.wsdl</wsdlLocation>
                         <wsdlUrls>
                             <wsdlUrl>${basedir}/src/main/resources/wsdl/mandate.wsdl</wsdlUrl>
                         </wsdlUrls>
                         <verbose>true</verbose>
+                        <vmArgs>
+                            <vmArg>-Djavax.xml.accessExternalDTD=all</vmArg>
+                            <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                        </vmArgs>
                     </configuration>
                 </execution>
             </executions>
