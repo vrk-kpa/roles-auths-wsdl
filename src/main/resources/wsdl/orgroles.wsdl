@@ -70,16 +70,16 @@
             <xsd:complexType name="OrganizationalRolesType">
                 <xsd:sequence>
                     <xsd:element name="organization" type="tns:OrganizationType" />
-                    <xsd:element name="total" maxOccurs="1" minOccurs="1" nillable="false" type="xsd:nonNegativeInteger" />
-                    <xsd:element name="size" maxOccurs="1" minOccurs="1" nillable="false" type="xsd:nonNegativeInteger" />
-                    <xsd:element name="offset" maxOccurs="1" minOccurs="1" nillable="false" type="xsd:nonNegativeInteger" />
-                    <xsd:element name="limit" maxOccurs="1" minOccurs="1" nillable="false" type="xsd:nonNegativeInteger" />
                     <xsd:element name="roles" nillable="true" type="tns:RoleList" />
                 </xsd:sequence>
             </xsd:complexType>
 
             <xsd:complexType name="OrganizationListType">
                 <xsd:sequence>
+                    <xsd:element name="total" maxOccurs="1" minOccurs="1" nillable="false" type="xsd:nonNegativeInteger" />
+                    <xsd:element name="size" maxOccurs="1" minOccurs="1" nillable="false" type="xsd:nonNegativeInteger" />
+                    <xsd:element name="offset" maxOccurs="1" minOccurs="1" nillable="false" type="xsd:nonNegativeInteger" />
+                    <xsd:element name="limit" maxOccurs="1" minOccurs="1" nillable="false" type="xsd:nonNegativeInteger" />
                     <xsd:element name="organization" maxOccurs="unbounded"
                                  minOccurs="0" nillable="true" type="tns:OrganizationalRolesType" />
                 </xsd:sequence>
