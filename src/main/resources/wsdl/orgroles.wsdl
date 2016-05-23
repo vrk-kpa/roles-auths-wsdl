@@ -39,26 +39,6 @@
                             <xsd:restriction base="xsd:string" />
                         </xsd:simpleType>       
                     </xsd:element>             
-                    <xsd:element name="offset" maxOccurs="1" minOccurs="1" nillable="false">
-                        <xsd:annotation>
-                            <xsd:documentation>
-                                Optional. Skip the first n organizations. Defaults to 0.
-                            </xsd:documentation>
-                        </xsd:annotation>
-                        <xsd:simpleType>
-                            <xsd:restriction base="xsd:nonNegativeInteger" />
-                        </xsd:simpleType>
-                    </xsd:element>
-                    <xsd:element name="limit" maxOccurs="1" minOccurs="1" nillable="false">
-                        <xsd:annotation>
-                            <xsd:documentation>
-                                Optional. Only fetch n organizations, starting from given offset. Defaults to 30.
-                            </xsd:documentation>
-                        </xsd:annotation>
-                        <xsd:simpleType>
-                            <xsd:restriction base="xsd:nonNegativeInteger" />
-                        </xsd:simpleType>
-                    </xsd:element>
                 </xsd:sequence>
 
             </xsd:complexType>
@@ -87,34 +67,6 @@
 
             <xsd:complexType name="Response">
                 <xsd:sequence>
-                    <xsd:element name="total" maxOccurs="1" minOccurs="1" nillable="false" type="xsd:nonNegativeInteger">
-                        <xsd:annotation>
-                            <xsd:documentation>
-                                Total number of results.
-                            </xsd:documentation>
-                        </xsd:annotation>
-                    </xsd:element>
-                    <xsd:element name="size" maxOccurs="1" minOccurs="1" nillable="false" type="xsd:nonNegativeInteger">
-                        <xsd:annotation>
-                            <xsd:documentation>
-                                Number of results in this result set.
-                            </xsd:documentation>
-                        </xsd:annotation>
-                    </xsd:element>
-                    <xsd:element name="offset" maxOccurs="1" minOccurs="1" nillable="false" type="xsd:nonNegativeInteger">
-                        <xsd:annotation>
-                            <xsd:documentation>
-                                Number of results skipped.
-                            </xsd:documentation>
-                        </xsd:annotation>
-                    </xsd:element>
-                    <xsd:element name="limit" maxOccurs="1" minOccurs="1" nillable="false" type="xsd:nonNegativeInteger">
-                        <xsd:annotation>
-                            <xsd:documentation>
-                                Limit for this query.
-                            </xsd:documentation>
-                        </xsd:annotation>
-                    </xsd:element>
                     <xsd:element name="organizationList" type="items:OrganizationListType" />
                     <xsd:element name="exceptionMessage" maxOccurs="1"
                                  minOccurs="0" nillable="true" type="xsd:string" />
