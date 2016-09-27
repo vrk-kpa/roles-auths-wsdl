@@ -9,12 +9,9 @@
     <version>1.0-SNAPSHOT</version>
     <name>roles-auths-wsdl</name>
 
-    <parent>
-        <groupId>fi.vm.kapa.rova</groupId>
-        <artifactId>roles-auths-parent</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
-
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
     <build>
         <plugins>
         <plugin>
