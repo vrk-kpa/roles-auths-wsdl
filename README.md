@@ -1,3 +1,3 @@
 # roles-auths-wsdl
 
-Asiointivaltuuspalvelun palveluväylärajapintojen kuvaukset. 
+Soap interface descriptions for roles and authorizations service.
