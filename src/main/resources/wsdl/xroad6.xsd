@@ -9,6 +9,7 @@
     <xsd:element name="service" type="id:XRoadServiceIdentifierType" />
     <xsd:element name="userId" type="xsd:string" />
     <xsd:element name="id" type="xsd:string" />
+    <xsd:element name="protocolVersion" type="xsd:string" />
     <xsd:element name="async" type="xsd:boolean" />
     <xsd:complexType name="authCertDeletionType">
         <xsd:sequence>
