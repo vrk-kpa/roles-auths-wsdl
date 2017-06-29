@@ -58,6 +58,25 @@
                     </configuration>
                 </execution>
                 <execution>
+                    <id>authorizationList</id>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>wsimport</goal>
+                    </goals>
+                    <configuration>
+                        <packageName>fi.vm.kapa.xml.rova.api.authorization.list</packageName>
+                        <wsdlLocation>/wsdl/authorization.wsdl</wsdlLocation>
+                        <wsdlUrls>
+                            <wsdlUrl>${basedir}/src/main/resources/wsdl/authorizationList.wsdl</wsdlUrl>
+                        </wsdlUrls>
+                        <verbose>true</verbose>
+                        <vmArgs>
+                            <vmArg>-Djavax.xml.accessExternalDTD=all</vmArg>
+                            <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                        </vmArgs>
+                    </configuration>
+                </execution>
+                <execution>
                     <id>orgroles</id>
                     <phase>generate-sources</phase>
                     <goals>
