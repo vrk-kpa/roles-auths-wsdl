@@ -65,7 +65,7 @@
                     </goals>
                     <configuration>
                         <packageName>fi.vm.kapa.xml.rova.api.authorization.list</packageName>
-                        <wsdlLocation>/wsdl/authorization.wsdl</wsdlLocation>
+                        <wsdlLocation>/wsdl/authorizationList.wsdl</wsdlLocation>
                         <wsdlUrls>
                             <wsdlUrl>${basedir}/src/main/resources/wsdl/authorizationList.wsdl</wsdlUrl>
                         </wsdlUrls>
