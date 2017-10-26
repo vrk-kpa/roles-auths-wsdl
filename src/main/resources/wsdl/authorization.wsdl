@@ -19,9 +19,8 @@
                     <xsd:element name="delegateIdentifier">
                         <xsd:annotation>
                             <xsd:documentation>
-                                Mandatory. Unique identifier of delegate
-                                entity.
-                                In example ssn, business ID or similar.
+                                Unique identifier of delegate.
+                                For example personal id number or business id.
                             </xsd:documentation>
                         </xsd:annotation>
                         <xsd:simpleType>
@@ -31,9 +30,8 @@
                     <xsd:element name="principalIdentifier">
                         <xsd:annotation>
                             <xsd:documentation>
-                                Optional. This is used when authorization for
-                                particular delegation is requested. The unique identifier of
-                                principal in example ssn or business ID.
+                                Unique identifier of principal.
+                                For example personal id number or business id.
                             </xsd:documentation>
                         </xsd:annotation>
                         <xsd:simpleType>
