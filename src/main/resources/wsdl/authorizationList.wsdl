@@ -50,7 +50,7 @@
 
             <xsd:complexType name="RoleList">
                 <xsd:sequence>
-                    <xsd:element name="roles" maxOccurs="unbounded"
+                    <xsd:element name="role" maxOccurs="unbounded"
                                  minOccurs="0" nillable="true" type="xsd:string" />
                 </xsd:sequence>
             </xsd:complexType>
