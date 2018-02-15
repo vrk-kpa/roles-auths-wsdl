@@ -17,54 +17,49 @@
 
             <xsd:complexType name="Request">
                 <xsd:sequence>
-                    <xsd:element name="delegate" minOccurs="1" maxOccurs="1">
+                    <xsd:element name="delegate" minOccurs="1" maxOccurs="1" nillable="false"  type="xsd:string">
                         <xsd:annotation>
                             <xsd:documentation>
                                 Mandatory. Unique identifier of representative organization.
                             </xsd:documentation>
                         </xsd:annotation>
-                        <xsd:simpleType>
-                            <xsd:restriction base="xsd:string"/>
-                        </xsd:simpleType>
                     </xsd:element>
 
-                    <xsd:element name="principals" maxOccurs="unbounded" minOccurs="1" nillable="true">
+                    <xsd:element name="principal" maxOccurs="unbounded" minOccurs="1" nillable="false"  type="xsd:string">
                         <xsd:annotation>
                             <xsd:documentation>
-                                List of unique identifiers for delegates.
+                                Mandatory. One or more identifiers for principal organizations.
                             </xsd:documentation>
                         </xsd:annotation>
-                        <xsd:simpleType>
-                            <xsd:restriction base="xsd:string"/>
-                        </xsd:simpleType>
                     </xsd:element>
-                </xsd:sequence>
-            </xsd:complexType>
-
-            <xsd:complexType name="IssueList">
-                <xsd:sequence>
-                    <xsd:element name="issues" maxOccurs="unbounded" minOccurs="0" nillable="true" type="xsd:string"/>
                 </xsd:sequence>
             </xsd:complexType>
 
             <xsd:complexType name="OrgMandatesType">
                 <xsd:sequence>
-                    <xsd:element name="principal" type="xsd:string"/>
-                    <xsd:element name="name" nillable="true" type="xsd:string"/>
-                    <xsd:element name="issues" nillable="true" type="tns:IssueList"/>
+                    <xsd:element name="principal" type="xsd:string">
+                        <xsd:annotation>
+                            ID of the principal.
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="issue" maxOccurs="unbounded" minOccurs="0" nillable="true" type="xsd:string">
+                        <xsd:annotation>
+                            List of issues.
+                        </xsd:annotation>
+                    </xsd:element>
                 </xsd:sequence>
             </xsd:complexType>
 
             <xsd:complexType name="PrincipalListType">
                 <xsd:sequence>
-                    <xsd:element name="principal" maxOccurs="unbounded" minOccurs="0" nillable="true" type="tns:OrgMandatesType"/>
+                    <xsd:element name="principal" maxOccurs="unbounded" minOccurs="0" nillable="false" type="tns:OrgMandatesType"/>
                 </xsd:sequence>
             </xsd:complexType>
 
             <xsd:complexType name="Response">
                 <xsd:sequence>
-                    <xsd:element name="principalList" type="items:PrincipalListType"/>
-                    <xsd:element name="exceptionMessage" maxOccurs="1" minOccurs="0" nillable="true" type="xsd:string"/>
+                    <xsd:element name="principalList" type="items:PrincipalListType" nillable="true" />
+                    <xsd:element name="exceptionMessage" maxOccurs="1" minOccurs="0" nillable="true" type="xsd:string" />
                 </xsd:sequence>
             </xsd:complexType>
 
@@ -139,7 +134,7 @@
         <wsdl:documentation>WSDL-file for RoVa Organizational roles service
         </wsdl:documentation>
         <wsdl:port name="rovaOrgMandatesServicePort" binding="tns:rovaOrgMandatesBinding">
-            <soap:address location="http://localhost:8000/rova/Principal"/>
+            <soap:address location="http://localhost:8000/rova/OrganizationalMandates"/>
         </wsdl:port>
     </wsdl:service>
 
