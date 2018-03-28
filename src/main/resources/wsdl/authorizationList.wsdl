@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                  xmlns:xrd="http://x-road.ee/xsd/x-road.xsd" xmlns:xroad="http://x-road.eu/xsd/xroad.xsd"
+                  xmlns:xroad="http://x-road.eu/xsd/xroad.xsd"
                   xmlns:ns="http://x-road.eu/xsd/identifiers" xmlns:items="http://xml.vrk.fi/ws/Rova/AuthorizationList/Entities"
                   xmlns:request="http://xml.vrk.fi/ws/Rova/AuthorizationList/Request"
                   xmlns:response="http://xml.vrk.fi/ws/Rova/AuthorizationList/Response"
@@ -108,7 +108,7 @@
                       transport="http://schemas.xmlsoap.org/soap/http" />
         <wsdl:operation name="rovaAuthorizationListService">
             <soap:operation soapAction="" />
-            <xrd:version>v1</xrd:version>
+            <ns:version>v1</ns:version>
             <wsdl:input>
                 <soap:body use="literal" />
                 <soap:header message="tns:requestheader" part="client"
