@@ -96,7 +96,7 @@
                     </configuration>
                 </execution>
                 <execution>
-                    <id>principalissues</id>
+                    <id>principalorganizationissues</id>
                     <phase>generate-sources</phase>
                     <goals>
                         <goal>wsimport</goal>
@@ -106,6 +106,25 @@
                         <wsdlLocation>/wsdl/orgmandates.wsdl</wsdlLocation>
                         <wsdlUrls>
                             <wsdlUrl>${basedir}/src/main/resources/wsdl/orgmandates.wsdl</wsdlUrl>
+                        </wsdlUrls>
+                        <verbose>true</verbose>
+                        <vmArgs>
+                            <vmArg>-Djavax.xml.accessExternalDTD=all</vmArg>
+                            <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                        </vmArgs>
+                    </configuration>
+                </execution>
+                <execution>
+                    <id>principalpersonissues</id>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>wsimport</goal>
+                    </goals>
+                    <configuration>
+                        <packageName>fi.vm.kapa.xml.rova.api.orgpersonmandates</packageName>
+                        <wsdlLocation>/wsdl/orgpersonmandates.wsdl</wsdlLocation>
+                        <wsdlUrls>
+                            <wsdlUrl>${basedir}/src/main/resources/wsdl/orgpersonmandates.wsdl</wsdlUrl>
                         </wsdlUrls>
                         <verbose>true</verbose>
                         <vmArgs>

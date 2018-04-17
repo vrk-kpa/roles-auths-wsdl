@@ -2,18 +2,18 @@
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                   xmlns:xroad="http://x-road.eu/xsd/xroad.xsd"
-                  xmlns:ns="http://x-road.eu/xsd/identifiers" xmlns:items="http://xml.vrk.fi/ws/Rova/OrgMandates/Entities"
-                  xmlns:request="http://xml.vrk.fi/ws/Rova/OrgMandates/Request"
-                  xmlns:response="http://xml.vrk.fi/ws/Rova/OrgMandates/Response"
-                  xmlns:tns="http://xml.vrk.fi/ws/Rova/OrgMandates"
-                  name="RovaOrgMandates" targetNamespace="http://xml.vrk.fi/ws/Rova/OrgMandates">
+                  xmlns:ns="http://x-road.eu/xsd/identifiers" xmlns:items="http://xml.vrk.fi/ws/Rova/OrgPersonMandates/Entities"
+                  xmlns:request="http://xml.vrk.fi/ws/Rova/OrgPersonMandates/Request"
+                  xmlns:response="http://xml.vrk.fi/ws/Rova/OrgPersonMandates/Response"
+                  xmlns:tns="http://xml.vrk.fi/ws/Rova/OrgPersonMandates"
+                  name="RovaOrgPersonMandates" targetNamespace="http://xml.vrk.fi/ws/Rova/OrgPersonMandates">
     <wsdl:types>
         <xsd:schema>
             <xsd:import namespace="http://x-road.eu/xsd/xroad.xsd" schemaLocation="xroad6.xsd"/>
         </xsd:schema>
-        <xsd:schema xmlns:tns="http://xml.vrk.fi/ws/Rova/OrgMandates/Entities"
+        <xsd:schema xmlns:tns="http://xml.vrk.fi/ws/Rova/OrgPersonMandates/Entities"
                     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                    targetNamespace="http://xml.vrk.fi/ws/Rova/OrgMandates/Entities">
+                    targetNamespace="http://xml.vrk.fi/ws/Rova/OrgPersonMandates/Entities">
 
             <xsd:complexType name="Request">
                 <xsd:sequence>
@@ -28,14 +28,14 @@
                     <xsd:element name="principal" maxOccurs="unbounded" minOccurs="1" nillable="false"  type="xsd:string">
                         <xsd:annotation>
                             <xsd:documentation>
-                                Mandatory. One or more identifiers for principal organizations.
+                                Mandatory. One or more identifiers for principal person.
                             </xsd:documentation>
                         </xsd:annotation>
                     </xsd:element>
                 </xsd:sequence>
             </xsd:complexType>
 
-            <xsd:complexType name="OrgMandatesType">
+            <xsd:complexType name="OrgPersonMandatesType">
                 <xsd:sequence>
                     <xsd:element name="principalId" type="xsd:string">
                         <xsd:annotation>
@@ -65,7 +65,7 @@
 
             <xsd:complexType name="PrincipalListType">
                 <xsd:sequence>
-                    <xsd:element name="principal" maxOccurs="unbounded" minOccurs="0" nillable="false" type="tns:OrgMandatesType"/>
+                    <xsd:element name="principal" maxOccurs="unbounded" minOccurs="0" nillable="false" type="tns:OrgPersonMandatesType"/>
                 </xsd:sequence>
             </xsd:complexType>
 
@@ -82,7 +82,7 @@
                 </xsd:sequence>
             </xsd:complexType>
 
-            <xsd:element name="rovaOrgMandatesService">
+            <xsd:element name="rovaOrgPersonMandatesService">
                 <xsd:complexType id="Request">
                     <xsd:sequence>
                         <xsd:element name="request" type="items:Request"/>
@@ -90,7 +90,7 @@
                 </xsd:complexType>
             </xsd:element>
 
-            <xsd:element name="rovaOrgMandatesServiceResponse">
+            <xsd:element name="rovaOrgPersonMandatesServiceResponse">
                 <xsd:complexType id="Response">
                     <xsd:sequence>
                         <xsd:element name="request" type="items:Request"/>
@@ -110,24 +110,24 @@
         <wsdl:part name="async" element="xroad:async"/>
     </wsdl:message>
 
-    <wsdl:message name="rovaOrgMandatesService">
-        <wsdl:part name="Request" element="items:rovaOrgMandatesService"/>
+    <wsdl:message name="rovaOrgPersonMandatesService">
+        <wsdl:part name="Request" element="items:rovaOrgPersonMandatesService"/>
     </wsdl:message>
 
-    <wsdl:message name="rovaOrgMandatesServiceResponse">
-        <wsdl:part name="Response" element="items:rovaOrgMandatesServiceResponse"/>
+    <wsdl:message name="rovaOrgPersonMandatesServiceResponse">
+        <wsdl:part name="Response" element="items:rovaOrgPersonMandatesServiceResponse"/>
     </wsdl:message>
 
-    <wsdl:portType name="rovaOrgMandatesPortType">
-        <wsdl:operation name="rovaOrgMandatesService">
-            <wsdl:input name="rovaOrgMandatesService" message="tns:rovaOrgMandatesService"/>
-            <wsdl:output name="rovaOrgMandatesServiceResponse" message="tns:rovaOrgMandatesServiceResponse"/>
+    <wsdl:portType name="rovaOrgPersonMandatesPortType">
+        <wsdl:operation name="rovaOrgPersonMandatesService">
+            <wsdl:input name="rovaOrgPersonMandatesService" message="tns:rovaOrgPersonMandatesService"/>
+            <wsdl:output name="rovaOrgPersonMandatesServiceResponse" message="tns:rovaOrgPersonMandatesServiceResponse"/>
         </wsdl:operation>
     </wsdl:portType>
 
-    <wsdl:binding name="rovaOrgMandatesBinding" type="tns:rovaOrgMandatesPortType">
+    <wsdl:binding name="rovaOrgPersonMandatesBinding" type="tns:rovaOrgPersonMandatesPortType">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-        <wsdl:operation name="rovaOrgMandatesService">
+        <wsdl:operation name="rovaOrgPersonMandatesService">
             <soap:operation soapAction=""/>
             <ns:version>v1</ns:version>
             <wsdl:input>
@@ -149,11 +149,10 @@
         </wsdl:operation>
     </wsdl:binding>
 
-    <wsdl:service name="Rova_OrgMandates_Service">
-        <wsdl:documentation>WSDL-file for RoVa Organizational roles service
-        </wsdl:documentation>
-        <wsdl:port name="rovaOrgMandatesServicePort" binding="tns:rovaOrgMandatesBinding">
-            <soap:address location="http://localhost:8000/rova/OrganizationalMandates"/>
+    <wsdl:service name="Rova_OrgPersonMandates_Service">
+        <wsdl:documentation>WSDL-file for RoVa Organizational person mandate service</wsdl:documentation>
+        <wsdl:port name="rovaOrgPersonMandatesServicePort" binding="tns:rovaOrgPersonMandatesBinding">
+            <soap:address location="http://localhost:8000/rova/OrganizationalPersonMandates"/>
         </wsdl:port>
     </wsdl:service>
 
